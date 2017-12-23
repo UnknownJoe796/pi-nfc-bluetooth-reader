@@ -1,0 +1,12 @@
+[submodule "nfctools-gradle"]
+	path = nfctools-gradle
+	url = https://github.com/UnknownJoe796/nfctools-gradle.git
+[submodule "kotlin-core"]
+	path = kotlin-core
+	url = https://github.com/lightningkite/kotlin-core.git
+[submodule "kotlin-networking"]
+	path = kotlin-networking
+	url = https://github.com/lightningkite/kotlin-networking.git
+[submodule "kotlin-observable"]
+	path = kotlin-observable
+	url = https://github.com/lightningkite/kotlin-observable.git

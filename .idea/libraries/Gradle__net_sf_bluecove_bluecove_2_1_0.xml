@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: net.sf.bluecove:bluecove:2.1.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sf.bluecove/bluecove/2.1.0/873e4b60fdd6d2acf852f3b1b7c79a746b49bc6/bluecove-2.1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sf.bluecove/bluecove/2.1.0/925f295f5a4637e5b59219922d1ba153b2b4adc1/bluecove-2.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="kotlin-core_main" target="1.8" />
+      <module name="kotlin-core_test" target="1.8" />
+      <module name="kotlin-networking_main" target="1.8" />
+      <module name="kotlin-networking_test" target="1.8" />
+      <module name="kotlin-observable_main" target="1.8" />
+      <module name="kotlin-observable_test" target="1.8" />
+      <module name="nfcbluetooth_main" target="1.8" />
+      <module name="nfcbluetooth_test" target="1.8" />
+      <module name="nfctools-gradle_main" target="1.8" />
+      <module name="nfctools-gradle_test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

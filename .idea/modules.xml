@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kotlin-core/kotlin-core.iml" filepath="$PROJECT_DIR$/.idea/modules/kotlin-core/kotlin-core.iml" group="kotlin-core" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kotlin-core/kotlin-core_main.iml" filepath="$PROJECT_DIR$/.idea/modules/kotlin-core/kotlin-core_main.iml" group="kotlin-core" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kotlin-core/kotlin-core_test.iml" filepath="$PROJECT_DIR$/.idea/modules/kotlin-core/kotlin-core_test.iml" group="kotlin-core" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kotlin-networking/kotlin-networking.iml" filepath="$PROJECT_DIR$/.idea/modules/kotlin-networking/kotlin-networking.iml" group="kotlin-networking" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kotlin-networking/kotlin-networking_main.iml" filepath="$PROJECT_DIR$/.idea/modules/kotlin-networking/kotlin-networking_main.iml" group="kotlin-networking" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kotlin-networking/kotlin-networking_test.iml" filepath="$PROJECT_DIR$/.idea/modules/kotlin-networking/kotlin-networking_test.iml" group="kotlin-networking" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kotlin-observable/kotlin-observable.iml" filepath="$PROJECT_DIR$/.idea/modules/kotlin-observable/kotlin-observable.iml" group="kotlin-observable" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kotlin-observable/kotlin-observable_main.iml" filepath="$PROJECT_DIR$/.idea/modules/kotlin-observable/kotlin-observable_main.iml" group="kotlin-observable" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kotlin-observable/kotlin-observable_test.iml" filepath="$PROJECT_DIR$/.idea/modules/kotlin-observable/kotlin-observable_test.iml" group="kotlin-observable" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nfcbluetooth.iml" filepath="$PROJECT_DIR$/.idea/modules/nfcbluetooth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nfcbluetooth_main.iml" filepath="$PROJECT_DIR$/.idea/modules/nfcbluetooth_main.iml" group="nfcbluetooth" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nfcbluetooth_test.iml" filepath="$PROJECT_DIR$/.idea/modules/nfcbluetooth_test.iml" group="nfcbluetooth" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nfctools-gradle/nfctools-gradle.iml" filepath="$PROJECT_DIR$/.idea/modules/nfctools-gradle/nfctools-gradle.iml" group="nfctools-gradle" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nfctools-gradle/nfctools-gradle_main.iml" filepath="$PROJECT_DIR$/.idea/modules/nfctools-gradle/nfctools-gradle_main.iml" group="nfctools-gradle" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nfctools-gradle/nfctools-gradle_test.iml" filepath="$PROJECT_DIR$/.idea/modules/nfctools-gradle/nfctools-gradle_test.iml" group="nfctools-gradle" />
+    </modules>
+  </component>
+</project>
