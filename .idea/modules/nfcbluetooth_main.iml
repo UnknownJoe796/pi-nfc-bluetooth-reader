@@ -35,8 +35,8 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.2.10" level="project" />
-    <orderEntry type="library" name="Gradle: net.sf.bluecove:bluecove:2.1.0" level="project" />
-    <orderEntry type="library" name="Gradle: net.sf.bluecove:bluecove-gpl:2.1.0" level="project" />
+    <orderEntry type="library" name="Gradle: net.sf.bluecove:bluecove:2.1.1-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Gradle: net.sf.bluecove:bluecove-gpl:2.1.1-SNAPSHOT" level="project" />
     <orderEntry type="module" module-name="kotlin-core_main" />
     <orderEntry type="module" module-name="kotlin-observable_main" />
     <orderEntry type="module" module-name="kotlin-networking_main" />

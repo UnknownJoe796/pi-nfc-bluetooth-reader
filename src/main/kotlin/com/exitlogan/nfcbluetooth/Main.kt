@@ -30,11 +30,11 @@ public inline fun <R> StreamConnection.use(block: (StreamConnection) -> R): R {
 }
 
 inline fun StreamConnectionNotifier.acceptAndOpenData(
-        use:(connection:StreamConnection, input:DataInputStream, output:DataOutputStream)->Unit
-){
-    acceptAndOpen().use{ connection ->
-        connection.openDataInputStream().use{ input ->
-            connection.openDataOutputStream().use{ output ->
+        use: (connection: StreamConnection, input: DataInputStream, output: DataOutputStream) -> Unit
+) {
+    acceptAndOpen().use { connection ->
+        connection.openDataInputStream().use { input ->
+            connection.openDataOutputStream().use { output ->
                 use(
                         connection,
                         input,
@@ -47,7 +47,7 @@ inline fun StreamConnectionNotifier.acceptAndOpenData(
 
 fun main(vararg args: String) {
     var mode: NFCMode = NFCMode.READ
-    var messageToWrite:NDEFMessage = NDEFMessage("", "")
+    var messageToWrite: NDEFMessage = NDEFMessage("", "")
 
     LocalDevice.getLocalDevice().discoverable = DiscoveryAgent.GIAC
     val notifier = Connector.open("btspp://localhost:" + uuid + ";name=RemoteBluetooth") as StreamConnectionNotifier
@@ -55,19 +55,26 @@ fun main(vararg args: String) {
         val lifecycle = DisposeLifecycle()
         try {
             println("Waiting for connection...")
-
             notifier.acceptAndOpenData { connection, input, output ->
+
                 println("Connection made.")
 
                 println("Starting NFC...")
                 ndef(lifecycle, onCard = {
-                    when(mode){
+                    when (mode) {
                         NFCMode.READ -> {
                             println("Card detected.  Reading...")
-                            it.getRecords().forEach {
-                                println(it)
-                                output.write(MessageType.READ_RECORD.ordinal)
-                                output.write(it)
+                            if(it.isFormatted) {
+                                it.getRecords().forEach {
+                                    println(it)
+                                    output.write(MessageType.READ_RECORD.ordinal)
+                                    output.write(it)
+                                    output.flush()
+                                }
+                            } else {
+                                println("Non-formatted tag.")
+                                output.write(MessageType.EMPTY_TAG_FOUND.ordinal)
+                                output.flush()
                             }
                         }
                         NFCMode.WRITE -> {
@@ -75,28 +82,38 @@ fun main(vararg args: String) {
                             it.setRecords(messageToWrite)
                             output.write(MessageType.WRITE_RECORD_SUCCESS.ordinal)
                             output.write(messageToWrite)
+                            output.flush()
                         }
                     }
                 })
 
-                Thread{
-                    while(true){
-                        try{
-                            val read = input.read()
+                while (true) {
+                    try {
+                        val read = input.read()
+                        if(read == -1) break
+                        if(input.available() == 0) continue
+                        try {
                             val type = MessageType.values()[read]
-                            when(type){
+                            when (type) {
                                 MessageType.SET_MODE_READ -> mode = NFCMode.READ
                                 MessageType.SET_MODE_WRITE -> {
                                     mode = NFCMode.WRITE
                                     messageToWrite = input.readNDEFMessage()
                                 }
-                                else -> {println("Type $type not accepted")}
+                                else -> {
+                                    println("Type $type not accepted")
+                                }
                             }
-                        } catch (e:Exception){
+                        } catch (e: Exception) {
                             e.printStackTrace()
+                            break
                         }
+                    } catch (e: Exception) {
+                        e.printStackTrace()
+                        break
                     }
-                }.start()
+                }
+                println("Closing...")
             }
 
         } catch (e: Exception) {

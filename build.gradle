@@ -19,12 +19,16 @@ sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
+
+    maven {
+        url "http://www.pyx4me.com/maven2-snapshot"
+    }
 }
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-    compile "net.sf.bluecove:bluecove:2.1.0"
-    compile "net.sf.bluecove:bluecove-gpl:2.1.0"
+    compile "net.sf.bluecove:bluecove:2.1.1-SNAPSHOT"
+    compile "net.sf.bluecove:bluecove-gpl:2.1.1-SNAPSHOT"
     compile project(':kotlin-core')
     compile project(':kotlin-observable')
     compile project(':kotlin-networking')
