@@ -19,7 +19,12 @@ import org.nfctools.spi.scm.SclTerminal
 /**
  * Handles operations with the NFC reader for NDEF operations.
  */
-fun ndef(lifecycle: LifecycleConnectable, onCard: (NdefOperations) -> Unit) {
+fun ndef(
+        lifecycle: LifecycleConnectable,
+        onFailure:(Throwable?)->Unit = {},
+        onAnyTag:(Tag?)->Unit = {},
+        onCard: (NdefOperations) -> Unit
+) {
     try {
         var active = false
         var adapter: NfcAdapter? = null
@@ -36,6 +41,7 @@ fun ndef(lifecycle: LifecycleConnectable, onCard: (NdefOperations) -> Unit) {
 
                     override fun onScanningFailed(throwable: Throwable?) {
                         println("onScanningFailed")
+                        onFailure.invoke(throwable)
                         if (active) {
                             adapter?.startListening()
                         }
@@ -43,11 +49,13 @@ fun ndef(lifecycle: LifecycleConnectable, onCard: (NdefOperations) -> Unit) {
 
                     override fun onTagHandingFailed(throwable: Throwable?) {
                         println("onTagHandingFailed")
+                        onFailure.invoke(throwable)
                     }
                 }).apply {
                     registerTagListener(object : NfcTagListener {
                         override fun canHandle(tag: Tag?): Boolean {
                             println("canHandle: ${tag?.tagType?.name}")
+                            onAnyTag.invoke(tag)
                             return false
                         }
 
